@@ -1,6 +1,7 @@
 ### Домашнее задание по модулю "Системы управления версиями" - Верзилин Сергей
 
 В будущем благодаря добавленному файлу .gitignore, будут проигнорированы файлы .tfvars, которые могут содержать конфиденциальные данные,  
-файлы override.tf  override.tf.json  \*_override.tf  \*_override.tf.json 
+файлы override.tf  override.tf.json  \*_override.tf  \*_override.tf.json  
+ноывя строчка 
 
 
