@@ -39,7 +39,45 @@ dd01a35078 Update CHANGELOG.md
 ```
  * *Найдите коммит, в котором была создана функция **func providerSource**, её определение в коде выглядит так*:  
    **func providerSource(...) (вместо троеточия перечислены аргументы)**.
+### Ответ: 8c928e83589d90a031f811fae52a81be7153e82f
+```
+└─$ git log -S "func providerSource" --pretty=oneline                                                              
+5af1e6234ab6da412fb8637393c5a17a1b293663 main: Honor explicit provider_installation CLI config when present
+8c928e83589d90a031f811fae52a81be7153e82f main: Consult local directories as potential mirrors of providers
+```
+```git checkout 8c928e83589d90a031f811fae52a81be7153e82f``` 
+
+```└─$ git grep -n 'func providerSource(.*)'                                                                          
+provider_source.go:19:func providerSource(services *disco.Disco) getproviders.Source {
+```
+```
+└─$  git blame -L 19,19 provider_source.go                                                                         
+8c928e83589 (Martin Atkins 2020-04-02 18:04:39 -0700 19) func providerSource(services *disco.Disco) getproviders.Source {
+```
+```git checkout 5af1e6234ab6da412fb8637393c5a17a1b293663```
+```
+└─$ git grep -n 'func providerSource(.*)'                                                                          
+provider_source.go:23:func providerSource(configs []*cliconfig.ProviderInstallation, services *disco.Disco) (getproviders.Source, tfdiags.Diagnostics) {
+```
+```
+└─$ git blame -L 23,23 provider_source.go                                                                        
+5af1e6234ab (Martin Atkins 2020-04-21 16:28:59 -0700 23) func providerSource(configs []*cliconfig.ProviderInstallation, services *disco.Disco) (getproviders.Source, tfdiags.Diagnostics) {
+```
+
  * *Найдите все коммиты, в которых была изменена функция* **globalPluginDirs**.
+```
+└─$ git grep 'func globalPluginDirs(.*)'
+plugins.go:func globalPluginDirs() []string {
+
+```
+```
+└─$  git log -L :globalPluginDirs:plugins.go  -s --oneline                                                         
+78b1220558 Remove config.go and update things using its aliases
+52dbf94834 keep .terraform.d/plugins for discovery
+41ab0aef7a Add missing OS_ARCH dir to global plugin paths
+66ebff90cd move some more plugin search path logic to command
+8364383c35 Push plugin discovery down into command package
+```
  * *Кто автор функции* **synchronizedWriters**?
 
 *В качестве решения ответьте на вопросы и опишите, как были получены эти ответы*?
