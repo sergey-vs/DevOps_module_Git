@@ -2,7 +2,6 @@
 
 ### Задание
 
-В клонированном репозитории:
 1. *Найдите полный хеш и комментарий коммита, хеш которого начинается на* **aefea**.  
 ```
 └─$ git show --pretty=oneline aefea                                                                                             
@@ -17,6 +16,7 @@ aefead2207ef7e2aa5dc81a34aedf0cad4c32545 Update CHANGELOG.md
 ```
 ***
  * *Сколько родителей у коммита* **b8d720**? *Напишите их хеши*.
+### Ответ: 2
 ```
 └─$ git show --pretty=%P b8d720
 56cd7859e05c36c06b56d013b55a252d0bb7e158 9ea88f22fc6269854151c571162c5bcf958bee2b
@@ -81,7 +81,7 @@ plugins.go:func globalPluginDirs() []string {
 ```
 ***
  * *Кто автор функции* **synchronizedWriters**?
-### Ответ Martin Atkins
+### Ответ: Martin Atkins
 ```
 └─$ git log -S "func synchronizedWriters" --oneline
 bdfea50cc8 remove unused
