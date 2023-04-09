@@ -3,8 +3,8 @@
 ### Задание
 
 В клонированном репозитории:
-1. Найдите полный хеш и комментарий коммита, хеш которого начинается на **aefea**.
-'''
+1. Найдите полный хеш и комментарий коммита, хеш которого начинается на **aefea**.  
+```
 ┌──(sergey㉿kali)-[~/terraform]
 └─$ git show --pretty=oneline aefea                                                                                             
 aefead2207ef7e2aa5dc81a34aedf0cad4c32545 Update CHANGELOG.md
@@ -20,26 +20,22 @@ index 86d70e3e0d..588d807b17 100644
  * command/0.13upgrade: Fix `0.13upgrade` usage help text to include options ([#25127](https://github.com/hashicorp/terraform/issues/25127))
  * command/0.13upgrade: Do not add source for builtin provider ([#25215](https://github.com/hashicorp/terraform/issues/25215))
  * command/apply: Fix bug which caused Terraform to silently exit on Windows when using absolute plan path ([#25233](https://github.com/hashicorp/terraform/issues/25233))
-'''
+```
 
 
- 2. Ответьте на вопросы.
-  * Какому тегу соответствует коммит **85024d3**?
-  * Сколько родителей у коммита **b8d720**? Напишите их хеши.
-  * Перечислите хеши и комментарии всех коммитов, которые были сделаны между тегами **v0.12.23** и **v0.12.24**.
-  * Найдите коммит, в котором была создана функция **func providerSource**, её определение в коде выглядит так:  
-    **func providerSource(...) (вместо троеточия перечислены аргументы)**.
-  * Найдите все коммиты, в которых была изменена функция **globalPluginDirs**.
-  * Кто автор функции **synchronizedWriters**?
+2. Ответьте на вопросы.
+ * Какому тегу соответствует коммит **85024d3**?
+ * Сколько родителей у коммита **b8d720**? Напишите их хеши.
+ * Перечислите хеши и комментарии всех коммитов, которые были сделаны между тегами **v0.12.23** и **v0.12.24**.
+ * Найдите коммит, в котором была создана функция **func providerSource**, её определение в коде выглядит так:  
+   **func providerSource(...) (вместо троеточия перечислены аргументы)**.
+ * Найдите все коммиты, в которых была изменена функция **globalPluginDirs**.
+ * Кто автор функции **synchronizedWriters**?
 
 *В качестве решения ответьте на вопросы и опишите, как были получены эти ответы.*
 
-***
 
-### Ответ
 
- 1. commi **aefead2207ef7e2aa5dc81a34aedf0cad4c32545**, Update CHANGELOG.md 
- 2. ответы:  
   * commit **85024d3100126de36331c6982bfaac02cdab9e76** (tag: **v0.12.23**)
   * **2** родителя, **56cd7859e0**  **9ea88f22fc** 
   * git log --pretty=format:"%h %s" v**0.12.23**...v**0.12.24**
